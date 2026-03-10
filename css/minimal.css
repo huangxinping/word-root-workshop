@@ -532,6 +532,133 @@ p {
   }
 }
 
+/* ===== 移动端汉堡菜单按钮 ===== */
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+/* ===== 手机端响应式（640px 以下） ===== */
+
+@media (max-width: 640px) {
+  /* 导航：显示汉堡按钮，收起链接 */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.99);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    padding: 8px 24px 16px;
+    gap: 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 14px 4px;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-link:last-child {
+    border-bottom: none;
+  }
+
+  /* 标题字体缩小 */
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.375rem;
+  }
+
+  /* Hero 区域 */
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .hero {
+    padding-top: 100px;
+  }
+
+  /* 演示区域 */
+  .demo {
+    padding: var(--space-lg);
+  }
+
+  .demo-word {
+    font-size: 1.5rem;
+  }
+
+  /* 统计 */
+  .stat-value {
+    font-size: 1.75rem;
+  }
+
+  .stat-card {
+    padding: var(--space-lg);
+  }
+
+  /* 卡片 */
+  .card {
+    padding: var(--space-lg);
+  }
+
+  /* 大按钮 */
+  .btn-large {
+    padding: 14px 24px;
+    font-size: 1rem;
+    min-height: 52px;
+  }
+
+  /* action-buttons（详情页底部） */
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* ===== 无障碍 ===== */
 
 @media (prefers-reduced-motion: reduce) {

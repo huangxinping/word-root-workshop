@@ -188,7 +188,7 @@
 
     @media (max-width: 768px) {
       .flashcard {
-        height: 400px;
+        height: 420px;
       }
 
       .flashcard-root {
@@ -206,6 +206,80 @@
 
       .flashcard-btn {
         width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .flashcard-container {
+        padding: 80px 16px 24px;
+        justify-content: flex-start;
+      }
+
+      .flashcard {
+        height: auto;
+        min-height: 360px;
+        margin-bottom: 24px;
+      }
+
+      .flashcard-inner {
+        position: relative;
+        /* 手机端切换为上下翻转而非左右，避免固定高度问题 */
+      }
+
+      .flashcard-front, .flashcard-back {
+        position: relative;
+        height: auto;
+        min-height: 360px;
+        padding: 32px 20px;
+        border-radius: 12px;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+      }
+
+      .flashcard-back {
+        transform: rotateY(180deg);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        min-height: unset;
+      }
+
+      .flashcard-root {
+        font-size: 2.5rem;
+      }
+
+      .flashcard-meaning {
+        font-size: 1.25rem;
+      }
+
+      .flashcard-origin {
+        font-size: 1rem;
+      }
+
+      .flashcard-description {
+        font-size: 0.875rem;
+        text-align: left;
+      }
+
+      .flashcard-example {
+        font-size: 0.8125rem;
+      }
+
+      .flashcard-hint {
+        display: none;
+      }
+
+      .flashcard-btn {
+        padding: 14px 24px;
+        font-size: 1rem;
       }
     }
   </style>
@@ -228,6 +302,11 @@
         <a href="roots.html" class="nav-link">索引</a>
         <a href="progress.html" class="nav-link">进度</a>
       </div>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
@@ -285,6 +364,7 @@
 
   </div>
 
+  <script src="js/nav.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/wordData.js"></script>
   <script>
